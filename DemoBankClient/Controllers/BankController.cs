@@ -24,6 +24,11 @@ namespace DemoBankClient.Controllers
         [HttpGet]
         public ActionResult Login()
         {
+            var sessionUser = (serviceClient.AccountViewModel);
+            if (sessionUser != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
         [HttpPost]
@@ -79,10 +84,16 @@ namespace DemoBankClient.Controllers
                 return View("Fail");
             }   
         }
-        public ActionResult Tranfer()
+        [HttpGet]
+        public ActionResult Transfer()
         {
-
             return View();
+        }
+        [HttpPost]
+        public ActionResult Transfer(Transaction transaction)
+        {
+            ViewBag.TransferBalance = serviceClient.Transfer(transaction);
+            return View("AccountBalance");
         }
         public ActionResult TransactionHistory()
         {

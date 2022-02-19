@@ -143,6 +143,9 @@
   <ItemGroup>
     <None Include="Connected Services\BankService\configuration91.svcinfo" />
     <None Include="Connected Services\BankService\configuration.svcinfo" />
+    <Content Include="Connected Services\BankService\DemoBankClient.BankService.Transaction.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\BankService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -198,6 +201,7 @@
     <Content Include="Views\Bank\Fail.cshtml" />
     <Content Include="Views\Bank\AccountBalance.cshtml" />
     <Content Include="Views\Bank\Transaction.cshtml" />
+    <Content Include="Views\Bank\Transfer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

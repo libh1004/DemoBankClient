@@ -26,13 +26,16 @@ namespace DemoBankClient.BankService {
         private double AccountBalanceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AccountNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double AmountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CreatedAtField;
+        private System.Nullable<System.DateTime> CreatedAtField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmailField;
@@ -56,7 +59,7 @@ namespace DemoBankClient.BankService {
         private int TypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime UpdatedAtField;
+        private System.Nullable<System.DateTime> UpdatedAtField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UsernameField;
@@ -80,6 +83,19 @@ namespace DemoBankClient.BankService {
                 if ((this.AccountBalanceField.Equals(value) != true)) {
                     this.AccountBalanceField = value;
                     this.RaisePropertyChanged("AccountBalance");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AccountNumber {
+            get {
+                return this.AccountNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AccountNumberField, value) != true)) {
+                    this.AccountNumberField = value;
+                    this.RaisePropertyChanged("AccountNumber");
                 }
             }
         }
@@ -111,7 +127,7 @@ namespace DemoBankClient.BankService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedAt {
+        public System.Nullable<System.DateTime> CreatedAt {
             get {
                 return this.CreatedAtField;
             }
@@ -215,7 +231,7 @@ namespace DemoBankClient.BankService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime UpdatedAt {
+        public System.Nullable<System.DateTime> UpdatedAt {
             get {
                 return this.UpdatedAtField;
             }
@@ -236,6 +252,227 @@ namespace DemoBankClient.BankService {
                 if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
                     this.UsernameField = value;
                     this.RaisePropertyChanged("Username");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Transaction", Namespace="http://schemas.datacontract.org/2004/07/Bankservice.Entity")]
+    [System.SerializableAttribute()]
+    public partial class Transaction : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double AmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreatedAtField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DeletedAtField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double FeeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReceiverCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SenderCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime UpdatedAtField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Amount {
+            get {
+                return this.AmountField;
+            }
+            set {
+                if ((this.AmountField.Equals(value) != true)) {
+                    this.AmountField = value;
+                    this.RaisePropertyChanged("Amount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreatedAt {
+            get {
+                return this.CreatedAtField;
+            }
+            set {
+                if ((this.CreatedAtField.Equals(value) != true)) {
+                    this.CreatedAtField = value;
+                    this.RaisePropertyChanged("CreatedAt");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DeletedAt {
+            get {
+                return this.DeletedAtField;
+            }
+            set {
+                if ((this.DeletedAtField.Equals(value) != true)) {
+                    this.DeletedAtField = value;
+                    this.RaisePropertyChanged("DeletedAt");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Fee {
+            get {
+                return this.FeeField;
+            }
+            set {
+                if ((this.FeeField.Equals(value) != true)) {
+                    this.FeeField = value;
+                    this.RaisePropertyChanged("Fee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReceiverCode {
+            get {
+                return this.ReceiverCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReceiverCodeField, value) != true)) {
+                    this.ReceiverCodeField = value;
+                    this.RaisePropertyChanged("ReceiverCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SenderCode {
+            get {
+                return this.SenderCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SenderCodeField, value) != true)) {
+                    this.SenderCodeField = value;
+                    this.RaisePropertyChanged("SenderCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((this.TypeField.Equals(value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime UpdatedAt {
+            get {
+                return this.UpdatedAtField;
+            }
+            set {
+                if ((this.UpdatedAtField.Equals(value) != true)) {
+                    this.UpdatedAtField = value;
+                    this.RaisePropertyChanged("UpdatedAt");
                 }
             }
         }
@@ -283,6 +520,12 @@ namespace DemoBankClient.BankService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Withdrawal", ReplyAction="http://tempuri.org/IService/WithdrawalResponse")]
         System.Threading.Tasks.Task<double> WithdrawalAsync(double amount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Transfer", ReplyAction="http://tempuri.org/IService/TransferResponse")]
+        DemoBankClient.BankService.Transaction Transfer(DemoBankClient.BankService.Transaction transaction);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Transfer", ReplyAction="http://tempuri.org/IService/TransferResponse")]
+        System.Threading.Tasks.Task<DemoBankClient.BankService.Transaction> TransferAsync(DemoBankClient.BankService.Transaction transaction);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -350,6 +593,14 @@ namespace DemoBankClient.BankService {
         
         public System.Threading.Tasks.Task<double> WithdrawalAsync(double amount) {
             return base.Channel.WithdrawalAsync(amount);
+        }
+        
+        public DemoBankClient.BankService.Transaction Transfer(DemoBankClient.BankService.Transaction transaction) {
+            return base.Channel.Transfer(transaction);
+        }
+        
+        public System.Threading.Tasks.Task<DemoBankClient.BankService.Transaction> TransferAsync(DemoBankClient.BankService.Transaction transaction) {
+            return base.Channel.TransferAsync(transaction);
         }
     }
 }

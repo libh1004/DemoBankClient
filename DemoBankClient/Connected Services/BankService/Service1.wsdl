@@ -37,6 +37,12 @@
   <wsdl:message name="IService_Withdrawal_OutputMessage">
     <wsdl:part name="parameters" element="tns:WithdrawalResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_Transfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:Transfer" />
+  </wsdl:message>
+  <wsdl:message name="IService_Transfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TransferResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="Register">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Register" message="tns:IService_Register_InputMessage" />
@@ -57,6 +63,10 @@
     <wsdl:operation name="Withdrawal">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Withdrawal" message="tns:IService_Withdrawal_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/WithdrawalResponse" message="tns:IService_Withdrawal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Transfer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Transfer" message="tns:IService_Transfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/TransferResponse" message="tns:IService_Transfer_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -99,6 +109,15 @@
     </wsdl:operation>
     <wsdl:operation name="Withdrawal">
       <soap:operation soapAction="http://tempuri.org/IService/Withdrawal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transfer">
+      <soap:operation soapAction="http://tempuri.org/IService/Transfer" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
